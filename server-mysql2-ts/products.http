@@ -1,0 +1,97 @@
+### Variable base
+@base = http://localhost:3000/api/v1/products
+
+### 1. Consulta general (solo activos)
+GET {{base}}/getAll?active=true
+
+### 2. Consulta por ID de un producto activo
+GET {{base}}/getById/1
+
+### 3. Crear producto (201)
+# Cuerpo: name, price, stock, description, brand, img, alcohol_percentage, alcohol_type
+POST {{base}}/create
+Content-Type: application/json
+
+{
+  "name": "Ginebra Seca 750ml",
+  "price": 389.5,
+  "stock": 15,
+  "description": "Ginebra seca con notas de enebro.",
+  "brand": "Beefeater",
+  "img": "ginebra-seca.jpg",
+  "alcohol_percentage": 40,
+  "alcohol_type": "Ginebra"
+}
+
+### 4. Actualizacion completa (cambia el 11 por el id creado en el paso 3)
+PUT {{base}}/update/11
+Content-Type: application/json
+
+{
+  "name": "Ginebra London Dry 750ml",
+  "price": 409.99,
+  "stock": 20,
+  "description": "Ginebra estilo London Dry con notas citricas.",
+  "brand": "Beefeater",
+  "img": "ginebra-london-dry.jpg",
+  "alcohol_percentage": 40,
+  "alcohol_type": "Ginebra"
+}
+
+### 5. Cambiar solo el precio
+# Cuerpo: unicamente price
+PATCH {{base}}/change-price/11
+Content-Type: application/json
+
+{
+  "price": 429.9
+}
+
+### 6. Baja logica
+DELETE {{base}}/delete/11
+
+### 7. Comprobar que ya no aparece en getAll
+GET {{base}}/getAll?active=true
+
+### 8. Comprobar que ya no aparece en getById
+GET {{base}}/getById/11
+
+### 9. ID inexistente (responde 200 con "product not found")
+GET {{base}}/getById/9999
+
+### 10. Datos invalidos: precio negativo (400)
+POST {{base}}/create
+Content-Type: application/json
+
+{
+  "name": "Producto malo",
+  "price": -5,
+  "stock": 1,
+  "description": "Precio invalido.",
+  "alcohol_percentage": 40,
+  "alcohol_type": "Vodka"
+}
+
+### 11. Datos invalidos: id no numerico (400)
+GET {{base}}/getById/abc
+
+### 12. Datos invalidos: PATCH con precio en cero (400)
+PATCH {{base}}/change-price/1
+Content-Type: application/json
+
+{
+  "price": 0
+}
+
+### 13. Datos invalidos: porcentaje de alcohol fuera de rango (400)
+POST {{base}}/create
+Content-Type: application/json
+
+{
+  "name": "Producto malo 2",
+  "price": 100,
+  "stock": 1,
+  "description": "Porcentaje invalido.",
+  "alcohol_percentage": 150,
+  "alcohol_type": "Vodka"
+}
