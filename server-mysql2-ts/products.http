@@ -23,7 +23,7 @@ Content-Type: application/json
   "alcohol_type": "Ginebra"
 }
 
-### 4. Actualizacion completa (cambia el 11 por el id creado en el paso 3)
+### 4. Actualizacion completa
 PUT {{base}}/update/11
 Content-Type: application/json
 
@@ -39,7 +39,6 @@ Content-Type: application/json
 }
 
 ### 5. Cambiar solo el precio
-# Cuerpo: unicamente price
 PATCH {{base}}/change-price/11
 Content-Type: application/json
 
@@ -56,7 +55,7 @@ GET {{base}}/getAll?active=true
 ### 8. Comprobar que ya no aparece en getById
 GET {{base}}/getById/11
 
-### 9. ID inexistente (responde 200 con "product not found")
+### 9. ID inexistente 
 GET {{base}}/getById/9999
 
 ### 10. Datos invalidos: precio negativo (400)
