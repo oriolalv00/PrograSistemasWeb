@@ -1,0 +1,470 @@
+:root {
+    --bg-arena: #F7F5F0;
+    --bg-claro: #FAF8F5;
+    --marron-principal: #3E2723;
+    --marron-acento: #5D4037;
+    --marron-boton: #4A332B;
+    --texto-atenuado: #795548;
+    --color-borde: #E2DBD0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-arena);
+    color: var(--marron-principal);
+}
+
+.encabezado-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: var(--bg-arena);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.logo-marca {
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.enlaces-navegacion {
+    display: flex;
+    gap: 30px;
+}
+
+.enlaces-navegacion a {
+    text-decoration: none;
+    color: var(--marron-principal);
+    font-size: 0.95rem;
+}
+
+.iconos-navegacion {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+/* Sección Hero */
+.seccion-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 50px;
+    background: linear-gradient(to right, #F9F6F0, #EFECE6);
+}
+
+.contenido-hero {
+    max-width: 550px;
+}
+
+.subtitulo-etiqueta {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--texto-atenuado);
+    font-weight: bold;
+}
+
+.contenido-hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 15px 0 20px 0;
+    color: var(--marron-principal);
+}
+
+.contenido-hero p {
+    font-size: 1.05rem;
+    color: var(--texto-atenuado);
+    margin-bottom: 30px;
+}
+
+.contenedor-botones {
+    display: flex;
+    gap: 15px;
+}
+
+.boton {
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.boton-principal {
+    background-color: var(--marron-boton);
+    color: #fff;
+}
+
+.boton-secundario {
+    background-color: transparent;
+    border: 1px solid var(--marron-principal);
+    color: var(--marron-principal);
+}
+
+.imagen-hero {
+    position: relative;
+}
+
+.tarjeta-flotante {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Barra de Características */
+.barra-caracteristicas {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 30px 50px;
+    background: #fff;
+    border-top: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.barra-filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.desplegable {
+    position: relative; /* Clave para que el menú flotante se ubique debajo */
+    background: var(--blanco);
+    padding: 12px 22px;
+    border-radius: 6px;
+    border: 1px solid var(--bordes-superficies);
+    font-size: 0.95rem;
+    color: var(--texto-principal);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Menú oculto por defecto que aparece al pasar el cursor */
+.menu-desplegable {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--blanco);
+    border: 1px solid var(--bordes-superficies);
+    border-radius: 6px;
+    margin-top: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 10;
+    text-align: left;
+}
+
+.menu-desplegable a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--texto-principal);
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.menu-desplegable a:hover {
+    background: var(--fondo-principal);
+    color: var(--primario-cta);
+}
+
+.desplegable:hover .menu-desplegable {
+    display: block;
+}
+
+/* Sección de Productos */
+.seccion-productos {
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.titulo-seccion span {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--texto-atenuado);
+    font-weight: bold;
+}
+
+.titulo-seccion h2 {
+    font-size: 2.2rem;
+    margin: 10px 0;
+}
+
+.titulo-seccion p {
+    color: var(--texto-atenuado);
+    margin-bottom: 30px;
+}
+
+.barra-filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.campo-busqueda, .desplegable {
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--color-borde);
+    font-size: 0.9rem;
+    color: var(--texto-atenuado);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rejilla-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.tarjeta-producto {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid var(--color-borde);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tarjeta-producto h3 {
+    margin: 15px 0 8px 0;
+    font-size: 1.2rem;
+}
+
+.tarjeta-producto p {
+    font-size: 0.9rem;
+    color: var(--texto-atenuado);
+    margin-bottom: 15px;
+}
+
+.contenedor-etiquetas {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.contenedor-etiquetas span {
+    background: var(--bg-arena);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    color: var(--texto-atenuado);
+}
+
+.fila-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precio {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.boton-carrito {
+    background: var(--marron-boton);
+    color: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Banner Historia */
+.banner-historia {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('./images/cultivo.jpg') center/cover;
+    color: #fff;
+    padding: 100px 50px;
+    text-align: left;
+}
+
+.contenido-banner {
+    max-width: 500px;
+}
+
+.contenido-banner span {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.contenido-banner h2 {
+    font-size: 2.5rem;
+    margin: 10px 0 15px 0;
+}
+
+.contenido-banner p {
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.contenido-banner .boton-secundario {
+    border-color: #fff;
+    color: #fff;
+}
+
+/* Testimonios */
+.seccion-testimonios {
+    padding: 60px 50px;
+    text-align: center;
+    background: var(--bg-arena);
+}
+
+.seccion-testimonios h2 {
+    font-size: 2rem;
+    margin: 10px 0 40px 0;
+}
+
+.rejilla-testimonios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tarjeta-testimonio {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid var(--color-borde);
+}
+
+.tarjeta-testimonio p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    color: var(--marron-principal);
+}
+
+.estrellas {
+    color: #f39c12;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+
+.tarjeta-testimonio h4 {
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.tarjeta-testimonio span {
+    font-size: 0.75rem;
+    color: var(--texto-atenuado);
+}
+
+/* Pie de página */
+.pie-pagina {
+    background: #fff;
+    padding: 60px 50px 30px 50px;
+    border-top: 1px solid var(--color-borde);
+}
+
+.seccion-suscripcion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg-arena);
+    padding: 30px 40px;
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+.texto-suscripcion {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.texto-suscripcion i {
+    font-size: 2rem;
+    color: var(--texto-atenuado);
+}
+
+.texto-suscripcion h4 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    color: var(--texto-atenuado);
+}
+
+.formulario-suscripcion {
+    display: flex;
+    gap: 10px;
+}
+
+.formulario-suscripcion input {
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: 1px solid var(--color-borde);
+    width: 250px;
+    outline: none;
+}
+
+.enlaces-pie-pagina {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.columna-pie h4 {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.columna-pie a {
+    display: block;
+    text-decoration: none;
+    color: var(--texto-atenuado);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.iconos-sociales {
+    display: flex;
+    gap: 15px;
+    font-size: 1.1rem;
+    color: var(--marron-principal);
+    cursor: pointer;
+}
+
+.derechos-autor {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-borde);
+    font-size: 0.75rem;
+    color: var(--texto-atenuado);
+}
